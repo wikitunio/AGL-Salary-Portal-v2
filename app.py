@@ -11,7 +11,13 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="AGL Salary Portal", page_icon="🏭", layout="wide")
+from config import PAGE_TITLE, PAGE_ICON, LAYOUT
+
+st.set_page_config(
+    page_title=PAGE_TITLE,
+    page_icon=PAGE_ICON,
+    layout=LAYOUT,
+)
 
 # --- DARK MODE SESSION STATE ---
 if 'dark_mode' not in st.session_state:
