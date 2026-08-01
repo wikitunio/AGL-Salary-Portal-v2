@@ -20,9 +20,10 @@ st.set_page_config(
 )
 
 # --- DARK MODE SESSION STATE ---
-if 'dark_mode' not in st.session_state:
-    st.session_state.dark_mode = False
+from config import DEFAULT_DARK_MODE
 
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = DEFAULT_DARK_MODE
 def check_password():
     def password_entered():
         if st.session_state["password"] == st.secrets["DASHBOARD_PASSWORD"]:
