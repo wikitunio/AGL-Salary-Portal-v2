@@ -146,11 +146,86 @@ header {visibility:hidden;}
     layout=LAYOUT,
 )
 
-# --- DARK MODE SESSION STATE ---
-from config import DEFAULT_DARK_MODE
+st.markdown("""
+<div class="executive-header">
 
-if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = DEFAULT_DARK_MODE
+<h1>🏭 AGL Salary Portal</h1>
+
+<p>
+Professional Personal Finance Dashboard
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+st.markdown(
+'<div class="section-title">📊 Executive Dashboard</div>',
+unsafe_allow_html=True
+)
+
+col1,col2,col3=st.columns(3)
+
+with col1:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Career Gross Salary</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
+with col2:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Career Net Salary</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
+with col3:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Provident Fund</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
+col4,col5,col6=st.columns(3)
+
+with col4:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Income Tax</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
+with col5:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Highest Salary</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
+with col6:
+
+    st.markdown("""
+    <div class="metric-card">
+    <div class="metric-title">Average Salary</div>
+    <div class="metric-value">PKR --</div>
+    <div class="metric-sub">Loading...</div>
+    </div>
+    """,unsafe_allow_html=True)
+
 
 @st.cache_data(ttl=3600)
 def fetch_salary_data():
