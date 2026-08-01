@@ -4,7 +4,7 @@ from googleapiclient.discovery import build
 
 
 def check_password():
-    """Returns True if the correct dashboard password is entered."""
+    """Password protection for the dashboard."""
 
     def password_entered():
         if st.session_state["password"] == st.secrets["DASHBOARD_PASSWORD"]:
@@ -15,7 +15,7 @@ def check_password():
 
     if "password_correct" not in st.session_state:
         st.markdown(
-            "<h2 style='text-align: center;'>🔒 Secure Login</h2>",
+            "<h2 style='text-align:center;'>🔒 Secure Login</h2>",
             unsafe_allow_html=True,
         )
         st.text_input(
@@ -28,7 +28,7 @@ def check_password():
 
     elif not st.session_state["password_correct"]:
         st.markdown(
-            "<h2 style='text-align: center;'>🔒 Secure Login</h2>",
+            "<h2 style='text-align:center;'>🔒 Secure Login</h2>",
             unsafe_allow_html=True,
         )
         st.text_input(
@@ -40,8 +40,7 @@ def check_password():
         st.error("😕 Password incorrect")
         return False
 
-    else:
-        return True
+    return True
 
 
 def authenticate_gmail():
