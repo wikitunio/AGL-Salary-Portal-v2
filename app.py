@@ -16,6 +16,131 @@ from googleapiclient.discovery import build
 from config import PAGE_TITLE, PAGE_ICON, LAYOUT
 
 st.set_page_config(
+    # ==========================================================
+# Version 2.1 UI Theme
+# ==========================================================
+
+st.markdown("""
+<style>
+
+/* Hide Streamlit Menu */
+#MainMenu {visibility:hidden;}
+footer {visibility:hidden;}
+header {visibility:hidden;}
+
+/* Background */
+.stApp{
+    background:#F5F7FA;
+}
+
+/* Main container */
+.block-container{
+    padding-top:1.5rem;
+    padding-bottom:2rem;
+    max-width:1500px;
+}
+
+/* Executive Header */
+
+.executive-header{
+    background:linear-gradient(135deg,#0F4C81,#1E88E5);
+    color:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+}
+
+.executive-header h1{
+    margin:0;
+    font-size:34px;
+    font-weight:700;
+}
+
+.executive-header p{
+    margin-top:8px;
+    font-size:18px;
+    opacity:0.95;
+}
+
+/* KPI Cards */
+
+.metric-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:0px 5px 15px rgba(0,0,0,0.08);
+
+    text-align:center;
+
+    transition:0.3s;
+
+    border-left:6px solid #1E88E5;
+
+    margin-bottom:15px;
+
+}
+
+.metric-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.15);
+
+}
+
+.metric-title{
+
+    color:#666;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.metric-value{
+
+    color:#0F4C81;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-top:10px;
+
+}
+
+.metric-sub{
+
+    color:#999;
+
+    font-size:13px;
+
+}
+
+/* Section Header */
+
+.section-title{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#0F4C81;
+
+    margin-top:20px;
+
+    margin-bottom:15px;
+
+}
+
+</style>
+""", unsafe_allow_html=True)
     page_title=PAGE_TITLE,
     page_icon=PAGE_ICON,
     layout=LAYOUT,
