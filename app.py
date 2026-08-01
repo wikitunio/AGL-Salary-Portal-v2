@@ -435,7 +435,27 @@ def main():
         if df.empty:
             st.warning("No valid pay slip data could be parsed. Check email formatting.")
             return
+# ==========================================================
+# Executive Dashboard Calculations
+# ==========================================================
 
+career_gross = df["Gross Pay"].sum()
+career_net = df["Net Pay"].sum()
+career_tax = df["Income Tax"].sum()
+career_pf = df["PF Deduction"].sum()
+
+highest_salary = df["Net Pay"].max()
+average_salary = df["Net Pay"].mean()
+
+total_months = len(df)
+
+salary_growth = 0
+if len(df) > 1:
+    first_salary = df.iloc[0]["Net Pay"]
+    last_salary = df.iloc[-1]["Net Pay"]
+
+    if first_salary > 0:
+        salary_growth = ((last_salary - first_salary) / first_salary) * 100
         # --- FETCH EXPENSES AND MERGE FOR SAVINGS CALCULATIONS ---
         df_exp, exp_error = fetch_expense_data()
         if not df_exp.empty:
