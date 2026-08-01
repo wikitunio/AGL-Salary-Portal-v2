@@ -16,6 +16,16 @@ from googleapiclient.discovery import build
 from config import PAGE_TITLE, PAGE_ICON, LAYOUT
 
 st.set_page_config(
+    page_title=PAGE_TITLE,
+    page_icon=PAGE_ICON,
+    layout=LAYOUT,
+)
+
+st.markdown("""
+<style>
+...
+</style>
+""", unsafe_allow_html=True)
     # ==========================================================
 # Version 2.1 UI Theme
 # ==========================================================
